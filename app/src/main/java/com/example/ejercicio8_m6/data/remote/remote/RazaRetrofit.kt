@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class RazaRetrofit {
     companion object {
         private const val URL_BASE = "https://dog.ceo/api/"
-        fun gesRetroFitRaza(): RazaApi {
+        fun getRetrofitRaza(): RazaApi {
 
             val mRetrofit = Retrofit.Builder()
                 .baseUrl(URL_BASE)
