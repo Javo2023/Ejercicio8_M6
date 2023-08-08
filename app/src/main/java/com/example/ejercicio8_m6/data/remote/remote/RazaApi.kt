@@ -1,4 +1,4 @@
-package com.example.ejercicio8_m6.data.remote
+package com.example.ejercicio8_m6.data.remote.remote
 
 import retrofit2.Response
 import retrofit2.http.GET
