@@ -11,8 +11,6 @@ class Repositorio (private val razaApi: RazaApi, private val razaDao: RazaDao) {
         val response = razaApi.getData()
         if(response.isSuccessful){
             val message = response.body()!!.message
-
-
             val keys = message.keys
 
             keys.forEach {
