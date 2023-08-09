@@ -10,6 +10,8 @@ import kotlinx.coroutines.launch
 
 class RazaViewModel (application: Application): AndroidViewModel(application){
     private val repositorio:Repositorio
+
+    fun razaLiveData()=repositorio.obtenerRazaEntity()
     init{
         val api = RazaRetrofit.getRetrofitRaza()
         val razaDatabase = RazaDatabase.getDataBase(application).getRazaDao()
