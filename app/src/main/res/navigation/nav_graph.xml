@@ -9,5 +9,14 @@
         android:id="@+id/listaRazas"
         android:name="com.example.ejercicio8_m6.presentacion.ListaRazasFragment"
         android:label="fragment_lista_razas"
-        tools:layout="@layout/fragment_lista_razas" />
+        tools:layout="@layout/fragment_lista_razas" >
+        <action
+            android:id="@+id/action_listaRazas_to_detalleFragment"
+            app:destination="@id/detalleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalleFragment"
+        android:name="com.example.ejercicio8_m6.presentacion.DetalleFragment"
+        android:label="fragment_detalle"
+        tools:layout="@layout/fragment_detalle" />
 </navigation>
