@@ -17,9 +17,9 @@ class Repositorio(private val razaApi: RazaApi, private val razaDao: RazaDao) {
         if (response.isSuccessful) {
             val message = response.body()!!.message
             val keys = message.keys
-
-            keys.forEach {
-                val razaEntity = RazaEntity(it)
+            keys.forEach {raza->
+                //val razaEntity = RazaEntity(it)
+                val razaEntity = raza.toRazaEntity()
                 razaDao.insertarRaza(razaEntity)
 
             }
@@ -27,14 +27,14 @@ class Repositorio(private val razaApi: RazaApi, private val razaDao: RazaDao) {
         } else {
             Log.e("repositorio", response.errorBody().toString())
         }
-
     }
-
     suspend fun getDetalleRaza(id: String) {
         val response = razaApi.getDetalleRaza(id)
         if (response.isSuccessful) {
-            response.body()!!.message.forEach {
-                val razaDetalleEntity = RazaDetalleEntity(id, it)
+            response.body()!!.message.forEach {url->
+              //  val razaDetalleEntity = RazaDetalleEntity(id, it)  // esto se transformo para test unitario
+                val razaDetalleEntity = url.toEntity(id) // esto viene del mapper
+
                 razaDao.insertDetallePerro(razaDetalleEntity)
             }
 
