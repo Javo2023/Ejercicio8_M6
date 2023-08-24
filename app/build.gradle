@@ -59,6 +59,12 @@ dependencies {
     kapt "androidx.room:room-compiler:$room_version"
     implementation "androidx.room:room-ktx:$room_version"
 
+    //test android
+    androidTestImplementation "androidx.arch.core:core-testing:2.2.0"
+    androidTestImplementation "androidx.room:room-testing:$room_version"
+
+    androidTestImplementation 'androidx.test.ext:truth:1.5.0'
+
     //Coil
     implementation 'io.coil-kt:coil:2.4.0'
     def nav_version = "2.6.0"
